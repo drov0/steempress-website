@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Parallax.js | Simple Parallax Scrolling Effect with jQuery</title>
+  <title>Steempress.io</title>
   <link href="./css/bootstrap.min.css" rel="stylesheet">
   <link href="./css/style.css" rel="stylesheet">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -13,10 +13,11 @@
       <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="./js/jquery.min.js"></script>
   <script src="./js/bootstrap.min.js"></script>
   <script>
     $(function() {
+      // TODO ajouter un moyen de gérer les mobiles
       if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
         $('#ios-notice').removeClass('hidden');
         $('.parallax-container').height($(window).height() * 0.5 | 0);
@@ -32,60 +33,35 @@
 </head>
 
 <body>
-  <section>
-    <div class="container">
-      <div id="ios-notice" class="alert alert-info hidden">
-        <p><strong>Notice:</strong> Hello mobile user. Unfortunately, this parallax effect is not reliably achieved on mobile devices, so all you will see on this demo page are static backgrounds. Please visit this page on a desktop browser to see its full
-          effect.</p>
-      </div>
-      <h1>Simple Parallax Scrolling <small>parallax.js</small></h1>
-      <p>Parallax.js is a dirt simple parallax scrolling effect inspired by <a href="http://spotify.com">Spotify.com</a> and implemented as a jQuery plugin.</p>
-      <a href="https://github.com/pixelcog/parallax.js/archive/v1.5.0.zip" class="btn btn-default download-link">Download Parallax.js v1.5.0</a>
-      <a href="https://github.com/pixelcog/parallax.js/" class="btn btn-default">View on GitHub</a>
-      <a href="https://github.com/pixelcog/parallax.js/tree/v2.0.0-alpha" class="btn btn-primary">Check out v2.0.0-alpha!</a>
-    </div>
-  </section>
-
   <div class="parallax-container" data-parallax="scroll" data-position="top" data-bleed="10" data-image-src="./img/stellar-spire-eagle-nebula-1400x900.jpg" data-natural-width="1400" data-natural-height="900"></div>
 
   <section>
     <div class="container">
-      <h2 id="installation">Installation</h2>
+      <h2 id="description">Description</h2>
 
-      <p>Download and include <code>parallax.min.js</code> in your document after including jQuery.</p>
+      <p>
+        SteemPress is a wordpress plugin to allow you to automatically publish your articles to the Steem blockchain whenever you publish them on your blog.
+        Steem is a blockchain where content and contributions are rewarded with STEEM tokens depending on the upvotes from other users. The crypto currency STEEM can be traded with anyone online and has zero transactions fees and three second transaction times.
+        <br />
+        <br />
+        So, what benefits could you as a blog owner get by also sharing your posts on the Steem blockchain?
+        <br />
+        <br />
+        It can help you gain a new audience as your content is brought to the eyes of people browsing any app or website that presents content stored on the Steem blockchain.
+        It may also provide a new source of income, as content posted on Steem earns its own rewards based on upvotes.
+        It will help store your content securely
+        <br />
+        <br />
+        To use SteemPress, you will need a Steem account which can be made for free signing up via www.steemit.com You can also follow the value of a STEEM token here : https://coinmarketcap.com/currencies/steem/
+        <br />
+        <br />
+        If you have any questions, feel free to contact me @Howo or @fredrikaa on https://steem.chat/
+        <br />
+        <br />
+        You can find more informations on it on this article : https://steemit.com/utopian-io/@howo/introducing-steempress-beta-a-wordpress-plugin-for-steem
+      </p>
 
-      <pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/path/to/parallax.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-      <h2 id="usage">Usage</h2>
-
-      <h3 id="viadataattributes">Via data attributes</h3>
-
-      <p>To easily add a parallax effect behind an element, add <code>data-parallax=&quot;scroll&quot;</code> to the element you want to use, and specify an image with <code>data-image-src=&quot;/path/to/image.jpg&quot;</code>.</p>
-
-      <pre><code>&lt;div class=&quot;parallax-window&quot; data-parallax=&quot;scroll&quot; data-image-src=&quot;/path/to/image.jpg&quot;&gt;&lt;/div&gt;
-</code></pre>
-
-      <h3 id="viajavascript">Via JavaScript</h3>
-
-      <p>To call the parallax plugin manually, simply select your target element with jQuery and do the following:</p>
-
-      <pre><code>$('.parallax-window').parallax({imageSrc: '/path/to/image.jpg'});
-</code></pre>
-
-      <h3 id="underthehood">Under The Hood</h3>
-
-      <p>What parallax.js will do is create a fixed-position element for each parallax image at the start of the document&#8217;s body. This mirror element will sit behind the other elements and match the position and dimensions of its target object.</p>
-
-      <p>Due to the nature of this implementation, you must ensure that these parallax objects and any layers below them are transparent so that you can see the parallax effect underneath. Also, if there is no other content in this element, you will need
-        to ensure that it has some fixed dimensions otherwise you won&#8217;t see anything.</p>
-
-      <pre><code>.parallax-window {
-    min-height: 400px;
-    background: transparent;
-}
-</code></pre>
+      <p>Download and include Steempress in your wordpress site.</p>
     </div>
   </section>
 
@@ -93,121 +69,48 @@
 
   <section>
     <div class="container">
-      <h2 id="options">Options</h2>
-      <p>Options can be passed in via data attributes of JavaScript. For data attributes, append the option name to <code>data-</code>, as in <code>data-image-src=&quot;&quot;</code>.</p>
-
-      <div class="alert alert-warning">
-        <p>Note that when specifying these options as html data-attributes, you should convert &#8220;camelCased&#8221; variable names into &#8220;dash-separated&#8221; lower-case names (e.g. <code>zIndex</code> would be <code>data-z-index=&quot;&quot;</code>).</p>
-      </div>
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped">
-          <thead>
-            <tr>
-              <th style="width: 100px;">Name</th>
-              <th style="width: 100px;">type</th>
-              <th style="width: 50px;">default</th>
-              <th>description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>imageSrc</td>
-              <td>path</td>
-              <td>null</td>
-              <td>You must provide a path to the image you wish to apply to the parallax effect.</td>
-            </tr>
-            <tr>
-              <td>naturalWidth</td>
-              <td>number</td>
-              <td>auto</td>
-              <td rowspan="2">You can provide the natural width and natural height of an image to speed up loading and reduce error when determining the correct aspect ratio of the image.</td>
-            </tr>
-            <tr>
-              <td>naturalHeight</td>
-              <td>number</td>
-              <td>auto</td>
-            </tr>
-            <tr>
-              <td>position</td>
-              <td>xPos yPos</td>
-              <td>center center</td>
-              <td rowspan="3">This is analogous to the background-position css property. Specify coordinates as top, bottom, right, left, center, or pixel values (e.g. -10px 0px). The parallax image will be positioned as close to these values as possible while still
-                covering the target element.</td>
-            </tr>
-            <tr>
-              <td>positionX</td>
-              <td>xPos</td>
-              <td>center</td>
-            </tr>
-            <tr>
-              <td>positionY</td>
-              <td>yPos</td>
-              <td>center</td>
-            </tr>
-            <tr>
-              <td>speed</td>
-              <td>float</td>
-              <td>0.2</td>
-              <td>The speed at which the parallax effect runs. 0.0 means the image will appear fixed in place, and 1.0 the image will flow at the same speed as the page content.</td>
-            </tr>
-            <tr>
-              <td>zIndex</td>
-              <td>number</td>
-              <td>-100</td>
-              <td>The z-index value of the fixed-position elements. By default these will be behind everything else on the page.</td>
-            </tr>
-            <tr>
-              <td>bleed</td>
-              <td>number</td>
-              <td>0</td>
-              <td>You can optionally set the parallax mirror element to extend a few pixels above and below the mirrored element. This can hide slow or stuttering scroll events in certain browsers.</td>
-            </tr>
-            <tr>
-              <td>iosFix</td>
-              <td>boolean</td>
-              <td>true</td>
-              <td>iOS devices are incompatable with this plugin. If true, this option will set the parallax image as a static, centered background image whenever it detects an iOS user agent. Disable this if you wish to implement your own graceful degradation.</td>
-            </tr>
-            <tr>
-              <td>androidFix</td>
-              <td>boolean</td>
-              <td>true</td>
-              <td>If true, this option will set the parallax image as a static, centered background image whenever it detects an Android user agent. Disable this if you wish to enable the parallax scrolling effect on Android devices.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <h2 id="features">Features</h2>
+      <p>
+        Automatic posting of your article
+        Conversion and cleanup of the text to make look good on steem.
+        Optional self vote
+        Add an original link to your blog
+        Custom tags for each article
+        Default tags if no tags are defined for an article.
+        Optional posting
+        Bulk posting
+      </p>
+      <h2 id="installation">Installation</h2>
+      <p>
+        If you don't already have an account on Steem, please get one at https://signup.steemit.com/. Validation can take a few days.
+        <br /><br />
+        Then simply go to settings and fill your username, private posting key and default tags, and you're good to go :)
+        <br /><br />
+        A setup guide can be found here: https://steemit.com/utopian-io/@apkmopo.com/tutorials-steempress-to-write-steemit-post-on-wordpress
+      </p>
+      <h2 id="FAQ">Frequently Asked Questions</h2>
+      <p>
+        For all the questions related to Steem please see: https://steemit.com/faq.html
+      </p>
+      <h2 id="installation">Benefactor rewards</h2>
+      <p>
+        Like most other apps on Steem, including esteem, dtube, dsound, dmania, utopian and zappl to name a few, we intend to use benefactor rewards to help run SteemPress. The benefactor rewards is currently set to 10%. In comparison, Dtube and Utopian both take 25% benefactor rewards while Zappl takes 15%.
+        <br />
+        We (fredrikaa and howo) are determined to do our best to keep this percentage low in order to incentivise more use. Discussions on the use of benefactor rewards, and what rates they should be, are of course welcomed.
+      </p>
     </div>
   </section>
 
   <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="./img/spiral-galaxy-1400x900.jpg" data-natural-width="1400" data-natural-height="900"></div>
 
-  <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-image-src="./img/reflection-nebula-750x763.jpg" data-natural-width="750" data-natural-height="763"></div>
-
   <footer>
     <div class="container">
-      Parallax.js &copy; 2017 <a href="http://pixelcog.com/">PixelCog Inc.</a> released under <a href="https://github.com/pixelcog/parallax.js/blob/master/LICENSE">MIT license</a><br /> All images taken from NASA are <a href="http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html#.U454_JRdXls">public domain</a>.<br
+      SteemPress.io &copy; 2018 <a href="http://steempress.io/">Steempress Inc.</a> released under <a href="https://github.com/drov0/steempress-website/blob/master/LICENSE">MIT license</a><br /> All images taken from NASA are <a href="http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html#.U454_JRdXls">public domain</a>.<br
       /><br />
-      <iframe src="http://ghbtns.com/github-btn.html?user=pixelcog&repo=parallax.js&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>
-      <iframe src="http://ghbtns.com/github-btn.html?user=pixelcog&repo=parallax.js&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
+      <iframe src="http://ghbtns.com/github-btn.html?user=drov0&repo=steempress-website&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="85" height="20"></iframe>
+      <iframe src="http://ghbtns.com/github-btn.html?user=drov0&repo=steempress-website&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
     </div>
   </footer>
-  <script type="text/javascript">
-    (function(i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-20587204-9', 'auto');
-    ga('send', 'pageview');
-  </script>
 </body>
 
 </html>
